@@ -1,0 +1,48 @@
+<div id="header">
+        <img src="/public/img/logo.png" id="logo">
+</div>
+<div id="main">
+        <div>
+            <div>
+                <button id="create-btn">Adicionar</button>
+            </div>
+        </div>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th class="edit-title">Edite</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {{#each usuarios}}  
+                            <p>{{id}}</p>
+                            <a href="/deletar{{id}}"><button>Excluir</button></a>
+                            <hr>
+                        {{/each}}
+                    </td>
+                    <td>
+                        {{#each usuarios}}  
+                            <p>{{nome}}</p><br>
+                            <hr>
+                        {{/each}}
+                    </td>
+                    <td>
+                        {{#each usuarios}} 
+                            <p>{{email}}</p><br>
+                            <hr>
+                        {{/each}} 
+                    </td>
+                </tr>            
+                <tr id="buttons"> 
+                    <th><button onclick="adicionar()">Adicionar</button ></th>
+                    <th><button onclick="alterar()">Alterar</button></th>
+                    <th><a href="/deletar/{{id}}"><button onclick="excluir()">Excluir</button></a></th>
+                </tr>
+            </tbody>
+        </table>
+</di>

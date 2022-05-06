@@ -1,0 +1,7 @@
+npm install body-parser
+npm install express
+npm install express-handlebars
+npm install mysql2
+npm install sequelize
+
+***Não esqueça de mudar as credenciais de acesso em models/db.js

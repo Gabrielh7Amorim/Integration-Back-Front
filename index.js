@@ -3,6 +3,7 @@ const app = express();
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const Usuario = require('./models/Usuarios');
+const { render } = require("express/lib/response");
 
 // Config
     //Template Engine
@@ -16,12 +17,46 @@ const Usuario = require('./models/Usuarios');
 
  
 // Rotas
-    app.get('/cad', function(req, res){
-        Usuario.findAll({oreder: [['id', 'DESC']]}).then(function(usuarios){
-            res.render('form', {usuarios: usuarios})
-        })
-        
+    app.get('/cad', async(req, res)=>{
+        Usuario.findAll({ordered: [['id', 'DESC']]}).then(function(user){
+           res.render('form', {usuarios: user});
+        })  
+
+        // await Usuario.findByPk(2)
+        //     .then((usuarios) => {
+        //         return res.render('form', {usuarios:usuarios})
+        //     }).catch(() => {
+        //         return res.status(400).json({
+        //             erro: true,
+        //             mensagem: "Erro: nenhum valor encontrado para pagina home!"
+        //         });
+        //     });
+
+        // const clienteAlterar = await Cliente.Cliente.findByPk(1);
+        // clienteAlterar.nome = "Gabriel Henrique"
+        // const resultadoSave = await clienteAlterar.save();
+        // console.log(resultadoSave);
+
     })
+
+    app.post('/busca', async(req, res)=>{
+       await Usuario.findByPk(req.body.pk).then(function(user){
+            i = user.id;
+            n = user.nome;
+            e = user.email;
+            res.render('edit', {i,n,e});
+        }).catch(function(erro){
+    //a definir
+        })
+    })
+
+    app.get('/alt', async(req, res)=>{
+        const clienteAlterar = await Usuario.findByPk(req.body.pk);
+        
+        console.log(clienteAlterar);
+
+    })
+
     app.post('/add', function(req, res){
         Usuario.create({
             nome: req.body.nome,

@@ -22,6 +22,7 @@
                         {{#each usuarios}}  
                             <p>{{id}}</p>
                             <a href="/deletar{{id}}"><button>Excluir</button></a>
+                            <button onclick="alterar()">Alterar</button>
                             <hr>
                         {{/each}}
                     </td>
@@ -37,12 +38,14 @@
                             <hr>
                         {{/each}} 
                     </td>
-                </tr>            
+                </tr>             
                 <tr id="buttons"> 
                     <th><button onclick="adicionar()">Adicionar</button ></th>
-                    <th><button onclick="alterar()">Alterar</button></th>
+                    <th><button onclick="busca()">Busca</button></th>
                     <th><a href="/deletar/{{id}}"><button onclick="excluir()">Excluir</button></a></th>
                 </tr>
             </tbody>
         </table>
+  
+     
 </di>

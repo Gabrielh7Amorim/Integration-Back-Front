@@ -1,0 +1,44 @@
+<div id="header">
+        <a href="/cad"><img src="/public/img/logo.png" id="logo"></a>
+</div>
+<div id="main">
+        <div>
+            <div>
+                <button id="create-btn">Adicionar</button>
+            </div>
+        </div>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th class="edit-title">Edite</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {{i}}
+                    </td>
+                    <td>
+                        {{n}}
+                    </td>
+                    <td>
+                        {{e}}
+                    </td>
+                </tr>
+                 
+                    </td>
+                               
+                <tr id="buttons">
+                    <th></th>
+                    <th><button onclick="alterar()">Alterar</button></th>
+                    <th><a href="/deletar/{{id}}"><button onclick="excluir()">Excluir</button></a></th>
+                </tr>
+            </tbody>
+            
+        </table>
+        <a href="/cad"><button>Voltar</button></a>
+     
+</div>

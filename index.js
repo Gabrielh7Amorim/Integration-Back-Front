@@ -50,12 +50,13 @@ const { render } = require("express/lib/response");
         })
     })
 
-    app.get('/alt', async(req, res)=>{
-        const clienteAlterar = await Usuario.findByPk(req.body.pk);
+    // EM DESENVOLVIMENTO
+    // app.get('/alt', async(req, res)=>{
+    //     const clienteAlterar = await Usuario.findByPk(req.body.pk);
         
-        console.log(clienteAlterar);
+    //     console.log(clienteAlterar);
 
-    })
+    // })
 
     app.post('/add', function(req, res){
         Usuario.create({

@@ -22,6 +22,7 @@ const { render } = require("express/lib/response");
            res.render('form', {usuarios: user});
         })  
 
+        //(IGNORAR O TESTE ABAIXO)
         // await Usuario.findByPk(2)
         //     .then((usuarios) => {
         //         return res.render('form', {usuarios:usuarios})
